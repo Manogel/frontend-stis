@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import Footer from '~/components/Footer';
 import SideBar from '~/components/SideBar';
 import TopBar from '~/components/TopBar';
-import store from '~/store';
+import { store } from '~/store';
 
 const AuthLayoutContent = ({ children }) => {
   document.body.classList.remove('bg-primary');
@@ -33,18 +33,14 @@ export default function RouteWrapper({
   isPrivate,
   ...rest
 }) {
-  let signed = true; // store.getState().auth.token;
+  const signed = store.getState().auth.token;
 
-  /*  if (!signed && isPrivate) {
+  if (!signed && isPrivate) {
     return <Redirect to="/" />;
   }
 
   if (signed && !isPrivate) {
     return <Redirect to="/dashboard" />;
-  } */
-
-  if (!isPrivate) {
-    signed = false;
   }
 
   const Layout = signed ? AuthLayoutContent : NonAuthLayoutContent;

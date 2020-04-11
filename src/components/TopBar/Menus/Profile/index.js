@@ -27,23 +27,15 @@ function Profile() {
         className="nav-link arrow-none nav-user waves-effect"
         tag="a"
       >
-        <img src={user4} alt="user" className="rounded-circle" />
+        <img
+          src="https://api.adorable.io/avatars/50/abott@adorable.png"
+          alt="user"
+          className="rounded-circle"
+        />
       </DropdownToggle>
       <DropdownMenu className="profile-dropdown" right>
         <DropdownItem tag="a" href="#">
-          <i className="mdi mdi-account-circle m-r-5" /> Profile
-        </DropdownItem>
-        <DropdownItem tag="a" href="#">
-          <i className="mdi mdi-wallet m-r-5" /> My Wallet
-        </DropdownItem>
-        <DropdownItem tag="a" href="#">
-          <Badge color="success" className="mt-1 float-right">
-            11
-          </Badge>
-          <i className="mdi mdi-settings m-r-5" /> Settings
-        </DropdownItem>
-        <DropdownItem tag="a" href="#">
-          <i className="mdi mdi-lock-open-outline m-r-5" /> Lock screen
+          <i className="mdi mdi-account-circle m-r-5" /> Perfil
         </DropdownItem>
         <div className="dropdown-divider" />
         <DropdownItem

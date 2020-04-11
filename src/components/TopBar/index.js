@@ -33,22 +33,6 @@ export default function TopBar() {
         </div>
         <nav className="navbar-custom">
           <ul className="navbar-right list-inline float-right mb-0">
-            <li className="dropdown notification-list list-inline-item d-none d-md-inline-block mr-1">
-              <form role="search" className="app-search">
-                <div className="form-group mb-0">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Buscar.."
-                  />
-                  <button type="submit">
-                    <i className="fa fa-search" />
-                  </button>
-                </div>
-              </form>
-            </li>
-
-            <NotificationMenu />
             <ProfileMenu />
           </ul>
           <ul className="list-inline menu-left mb-0">

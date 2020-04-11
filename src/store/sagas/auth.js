@@ -1,5 +1,6 @@
-import { put } from 'redux-saga/effects';
+import { put, call } from 'redux-saga/effects';
 
+import api, { setToken } from '~/services/api';
 import history from '~/services/history';
 
 import AuthActions from '../ducks/auth';
@@ -8,13 +9,12 @@ export function* handleLogin({ payload }) {
   try {
     const { email, password } = payload;
 
-    if (email === 'admin@admin.com' && password === 'admin') {
-      yield put(AuthActions.handleLoginSuccess('token'));
-      history.push('/dashboard');
-      return;
-    }
+    const response = yield call(api.post, '/sessions', { email, password });
+    const { token } = response.data;
 
-    yield put(AuthActions.handleAuthFailure(true));
+    setToken(token);
+    yield put(AuthActions.handleLoginSuccess(token));
+    history.push('/dashboard');
   } catch (err) {
     yield put(AuthActions.handleAuthFailure(true));
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
-import { Alert, Button, Col, Row, Card } from 'reactstrap';
+import { Alert, Button, Col, Row, Card, Spinner } from 'reactstrap';
 
 import { AvForm, AvField } from 'availity-reactstrap-validation';
 
@@ -11,6 +11,7 @@ import AuthActions from '~/store/ducks/auth';
 function Login() {
   const dispatch = useDispatch();
   const errorAuth = useSelector((state) => state.auth.error);
+  const loading = useSelector((state) => state.auth.loading);
   const userLogged = useSelector((state) => state.auth.token);
 
   function handleSubmit(event, values) {
@@ -35,10 +36,10 @@ function Login() {
         </div>
         <div className="account-card-content">
           {userLogged && (
-            <Alert color="success">Your Login is successfull.</Alert>
+            <Alert color="success">Credenciais corretas, bem vindo(a)!.</Alert>
           )}
 
-          {errorAuth && <Alert color="danger">Login failure</Alert>}
+          {errorAuth && <Alert color="danger">Credenciais incorretas</Alert>}
 
           <AvForm
             className="form-horizontal m-t-30"
@@ -72,38 +73,36 @@ function Login() {
             <Row className="form-group m-t-20">
               <Col sm="6" />
               <Col sm="6" className="text-right">
-                <Button
-                  color="primary"
-                  className="w-md waves-effect waves-light"
-                  type="submit"
-                >
-                  Log In
-                </Button>
+                {loading ? (
+                  <Spinner type="grow" color="primary" />
+                ) : (
+                  <Button
+                    color="primary"
+                    className="w-md waves-effect waves-light"
+                    type="submit"
+                  >
+                    Entrar
+                  </Button>
+                )}
               </Col>
             </Row>
-            <Row className="form-group m-t-10 mb-0">
+            {/* <Row className="form-group m-t-10 mb-0">
               <Col md="12" className="m-t-20">
                 <Link to="/forget-password">
                   <i className="mdi mdi-lock" /> Forgot your password?
                 </Link>
               </Col>
-            </Row>
+            </Row> */}
           </AvForm>
         </div>
       </Card>
 
       <div className="m-t-40 text-center">
         <p>
-          Don't have an account ?
-          <Link to="/register" className="font-500 text-primary">
-            Sign up now
-          </Link>
-        </p>
-        <p>
-          © {new Date().getFullYear()} Veltrix. Refactored with{' '}
+          © {new Date().getFullYear()} Ist`s. Crafted with{' '}
           <i className="mdi mdi-heart text-danger" /> by{' '}
           <a
-            href="https://github.com/Manogel"
+            href="https://manogel.com.br"
             target="_blank"
             className="font-500 text-primary"
           >
