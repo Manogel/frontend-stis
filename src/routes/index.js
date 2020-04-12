@@ -9,6 +9,7 @@ import ChartsEchart from '~/pages/Charts/Echart';
 import ChartsKnob from '~/pages/Charts/Knob';
 import ChartsSparkline from '~/pages/Charts/Sparkline';
 import Dashboard from '~/pages/Dashboard';
+import DetailTopic from '~/pages/DetailTopic';
 import EmailCompose from '~/pages/Email/Compose';
 import EmailInbox from '~/pages/Email/Inbox';
 import EmailRead from '~/pages/Email/Read';
@@ -50,6 +51,7 @@ import TablesBasic from '~/pages/Tables/Basic';
 import TablesDatatables from '~/pages/Tables/Datatable';
 import TablesEditable from '~/pages/Tables/Editable';
 import TablesResponsive from '~/pages/Tables/Responsive';
+import Topics from '~/pages/Topics';
 import UiAlerts from '~/pages/Ui/Alerts';
 import UiButtons from '~/pages/Ui/Buttons';
 import UiCards from '~/pages/Ui/Cards';
@@ -99,6 +101,14 @@ export default function Routes() {
 
       <Route path="/dashboard" exact component={Dashboard} isPrivate />
       <Route path="/references" exact component={References} isPrivate />
+      <Route path="/topics" exact component={Topics} isPrivate />
+      <Route path="/topics/new-topic" exact component={DetailTopic} isPrivate />
+      <Route
+        path="/topics/edit-topic/:id"
+        exact
+        component={DetailTopic}
+        isPrivate
+      />
 
       <Route path="/calendar" exact component={Calendar} isPrivate />
 
