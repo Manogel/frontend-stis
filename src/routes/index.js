@@ -43,6 +43,7 @@ import IconsTyp from '~/pages/Icons/Typ';
 import Login from '~/pages/Login';
 import MapsGoogle from '~/pages/Maps/Google';
 import MapsVector from '~/pages/Maps/Vector';
+import References from '~/pages/References';
 import Register from '~/pages/Register';
 import ResetPassword from '~/pages/ResetPassword';
 import TablesBasic from '~/pages/Tables/Basic';
@@ -97,6 +98,7 @@ export default function Routes() {
       <Route path="/pages-gallery" exact component={Gallery} isPrivate />
 
       <Route path="/dashboard" exact component={Dashboard} isPrivate />
+      <Route path="/references" exact component={References} isPrivate />
 
       <Route path="/calendar" exact component={Calendar} isPrivate />
 

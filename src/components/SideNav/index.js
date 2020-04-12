@@ -16,10 +16,16 @@ function SideNav({ location }) {
               className={`waves-effect ${activeRoute('dashboard')}`}
             >
               <i className="ti-home" />
-              <span className="badge badge-primary badge-pill float-right">
-                2
-              </span>{' '}
               <span> Dashboard </span>
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="references"
+              className={`waves-effect ${activeRoute('references')}`}
+            >
+              <i className="ti-bookmark-alt" />
+              <span> Referências </span>
             </Link>
           </li>
           <li>

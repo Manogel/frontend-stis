@@ -39,7 +39,9 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'camelcase': ['off'],
-    'react/jsx-props-no-spreading': ['off']
+    'react/jsx-props-no-spreading': ['off'],
+    "no-alert": "off",
+    "no-restricted-globals": "off"
   },
   settings: {
     'import/resolver': {
