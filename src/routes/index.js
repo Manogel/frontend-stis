@@ -71,6 +71,7 @@ import UiSweetAlert from '~/pages/Ui/SweetAlert';
 import UiTabsAccordions from '~/pages/Ui/TabsAccordions';
 import UiTypography from '~/pages/Ui/Typography';
 import UiVideo from '~/pages/Ui/Video';
+import Users from '~/pages/Users';
 
 import Route from './Route';
 
@@ -102,13 +103,9 @@ export default function Routes() {
       <Route path="/dashboard" exact component={Dashboard} isPrivate />
       <Route path="/references" exact component={References} isPrivate />
       <Route path="/topics" exact component={Topics} isPrivate />
-      <Route path="/topics/new-topic" exact component={DetailTopic} isPrivate />
-      <Route
-        path="/topics/edit-topic/:id"
-        exact
-        component={DetailTopic}
-        isPrivate
-      />
+      <Route path="/new-topic" exact component={DetailTopic} isPrivate />
+      <Route path="/topics/:id" exact component={DetailTopic} isPrivate />
+      <Route path="/users" exact component={Users} isPrivate />
 
       <Route path="/calendar" exact component={Calendar} isPrivate />
 

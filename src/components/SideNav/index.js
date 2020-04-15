@@ -9,14 +9,14 @@ function SideNav({ location }) {
     <>
       <div id="sidebar-menu">
         <ul className="metismenu" id="menu">
-          <li className="menu-title">Main</li>
+          <li className="menu-title">Menu</li>
           <li>
             <Link
-              to="dashboard"
-              className={`waves-effect ${activeRoute('dashboard')}`}
+              to="topics"
+              className={`waves-effect ${activeRoute('topics')}`}
             >
-              <i className="ti-home" />
-              <span> Dashboard </span>
+              <i className="ti-write" />
+              <span> Publicações </span>
             </Link>
           </li>
           <li>
@@ -28,40 +28,13 @@ function SideNav({ location }) {
               <span> Referências </span>
             </Link>
           </li>
+
           <li>
-            <Link
-              to="calendar"
-              className={`waves-effect ${activeRoute('calendar')}`}
-            >
-              <i className="ti-calendar" />
-              <span> Calendar </span>
+            <Link to="users" className={`waves-effect ${activeRoute('users')}`}>
+              <i className="ti-user" />
+              <span> Usuários </span>
             </Link>
           </li>
-          <li id="temp">
-            <Link to="/#" className={`waves-effect ${activeRoute('email-')}`}>
-              <i className="ti-email" />
-              <span>
-                Email
-                <span className="float-right menu-arrow">
-                  <i className="mdi mdi-chevron-right" />
-                </span>
-              </span>
-            </Link>
-            <ul className="submenu">
-              <li className={activeRoute('email-inbox')}>
-                <Link to="email-inbox">Inbox</Link>
-              </li>
-              <li className={activeRoute('email-read')}>
-                <Link to="email-read">Email Read</Link>
-              </li>
-
-              <li className={activeRoute('email-compose')}>
-                <Link to="email-compose">Email Compose</Link>
-              </li>
-            </ul>
-          </li>
-
-          <li className="menu-title">Components</li>
 
           <li>
             <Link to="/#" className={`waves-effect ${activeRoute('ui-')}`}>

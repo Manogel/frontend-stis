@@ -11,6 +11,7 @@ import {
 } from 'reactstrap';
 
 import api from '~/services/api';
+import history from '~/services/history';
 
 export default function Topics() {
   const [topics, setTopics] = useState([]);
@@ -26,13 +27,13 @@ export default function Topics() {
       topics?.map((reference) => (
         <tr key={reference.id}>
           <th> {reference.title_br}</th>
-          <td>{reference.description_br}</td>
+          <td>{reference.introduction_br}</td>
           <td>
             <Button
               type="button"
               color="primary"
               className="waves-effect waves-light"
-              onClick={() => {}}
+              onClick={() => history.push(`/topics/${reference.id}`)}
             >
               <i className="far fa-edit" />
             </Button>
@@ -63,7 +64,7 @@ export default function Topics() {
                 type="button"
                 color="primary"
                 className="waves-effect waves-light m-b-20 "
-                onClick={() => {}}
+                onClick={() => history.push('/new-topic')}
               >
                 <i className="fas fa-plus m-r-10" />
                 Adicionar nova publicação
